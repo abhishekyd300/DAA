@@ -3,20 +3,20 @@ using namespace std;
 
 bool check(long long num) {
     int sum = 0;
-    bool doubleDigit = false;  // flag for every second digit from right
+    bool doubleDigit = false; 
 
     while (num > 0) {
-        int digit = num % 10;  // get last digit
+        int digit = num % 10; 
 
         if (doubleDigit) {
             digit *= 2;
             if (digit > 9)
-                digit -= 9;  // same as summing digits
+                digit -= 9; 
         }
 
         sum += digit;
-        doubleDigit = !doubleDigit; // flip flag each step
-        num /= 10;                  // remove last digit
+        doubleDigit = !doubleDigit; 
+        num /= 10;                  
     }
 
     return (sum % 10 == 0);
@@ -28,9 +28,9 @@ int main() {
     cin >> cardNumber;
 
     if (check(cardNumber))
-        cout << "Valid ✅";
+        cout << "Valid";
     else
-        cout << "Invalid ❌";
+        cout << "Invalid";
 
     return 0;
 }
